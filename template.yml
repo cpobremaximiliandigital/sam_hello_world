@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion : '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  SendEmailCharlesFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: function.handler
+      Runtime: ruby2.5
+      Events:
+        HelloWorld:
+          Type: Api
+          Properties:
+            Path: /helloWorld
+            Method: GET
